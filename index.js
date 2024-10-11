@@ -32,9 +32,14 @@ const questions = [{
 }
 ];
 
+
+const generateReadme = function (response) {
+    return `${generateMarkdown(response)}`
+}
+
 // TODO: Create a function to write README file
-function writeToFile(response) {
-    fs.writeFile('README-Generator.md', generateMarkdown(response), (err) =>
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>
         err ? console.error(err) : console.log(colors.bgGreen("README successfully created!"))
     );
 }
@@ -43,7 +48,8 @@ function writeToFile(response) {
 function init() {
     inquirer.prompt(questions)
         .then((response) => {
-            writeToFile(response);
+            const readmePageContent = generateReadme(answers);
+            writeToFile("README-generated.md", readmePageContent);
         }
         );
 };
