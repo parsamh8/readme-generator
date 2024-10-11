@@ -16,13 +16,9 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
-  if (license === "apache") {
-    return "(https://opensource.org/licenses/Apache-2.0)"
-    } else if (license === "boost") {
-      return "(https://www.boost.org/LICENSE_1_0.txt)"
-    } else if (license === "MIT") {
-      return "(https://opensource.org/licenses/MIT)"
+function renderLicenseLink(license) {  //this will be generating toc
+  if (license != "none") {
+      return `\n //table of content`
     } else {
       return ""
     }
@@ -30,9 +26,10 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
-
-  
+function renderLicenseSection(license) {  // this will generate JUST a  link section
+  if (license != "none") {
+    return //like markdown but for licenseection
+  }
 }
 
 // TODO: Create a function to generate markdown for README
@@ -48,6 +45,10 @@ ${response.description}
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
 - What problem does it solve?
 - What did you learn?
+
+
+##TOC
+
 
 
 ## Installation
