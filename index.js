@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
-import generateMarkdown from "./utils/generateMarkdown";
 import inquirer from 'inquirer';
 import fs from 'fs';
+import generateMarkdown from "./utils/generateMarkdown";
 
 // TODO: Create an array of questions for user input
 const questions = [{
@@ -15,15 +15,20 @@ const questions = [{
 }, {
     type: 'input',
     name: 'installation',
-    message: 'Describe the project:'
+    message: 'What are the installation instructions?'
 }, {
     type: 'input',
-    name: 'Usage',
-    message: 'Describe the project:'
+    name: 'usage',
+    message: 'What is the usage information?'
+}, {
+    type: 'list',
+    name: 'license',
+    message: 'What is the license?',
+    choices: ['apache', 'boost', 'MIT'] 
 }, {
     type: 'input',
-    name: 'Contribuiting',
-    message: 'Describe the project:'
+    name: 'test',
+    message: 'What are the test instructions?'
 }
 ];
 
