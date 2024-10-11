@@ -36,34 +36,38 @@ function renderLicenseSection(license) {
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `${data.title}
+function generateMarkdown(response) {
+  return `${response.title}
+
 
 ## Description
 
-${data.description}
+${response.description}
 
 - What was your motivation?
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
 - What problem does it solve?
 - What did you learn?
 
+
 ## Installation
 
-${data.installation}
+${response.installation}
+
 
 ## Usage
 
-this is the usage section
+${response.usage}
 
-## Contributing
 
-this is contributing section
+## License
+
+${response.license}
+
 
 ## Tests
-this is a test section
 
-##Link
+${response.test}
 
 `
 }
