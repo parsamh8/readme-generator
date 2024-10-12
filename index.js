@@ -33,26 +33,26 @@ const questions = [{
 ];
 
 
-const generateReadme = function (response) {
-    return `${generateMarkdown(response)}`
-}
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+// Function to generate README content
+const generateReadme = (response) => {
+    console.log(response); // Debug the response here
+    return `${generateMarkdown(response)}`;
+  };
+  
+  // Function to write README file
+  function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
-        err ? console.error(err) : console.log(colors.bgGreen("README successfully created!"))
+      err ? console.error(err) : console.log(colors.bgGreen('README successfully created!'))
     );
-}
-
-// TODO: Create a function to initialize app
-function init() {
-    inquirer.prompt(questions)
-        .then((response) => {
-            const readmePageContent = generateReadme(answers);
-            writeToFile("README-generated.md", readmePageContent);
-        }
-        );
-};
-
-// Function call to initialize app
-init();
+  }
+  
+  // Function to initialize app
+  function init() {
+    inquirer.prompt(questions).then((response) => {
+      const readmePageContent = generateReadme(response);
+      writeToFile('./Generated/README-generated.md', readmePageContent);
+    });
+  }
+  
+  // Function call to initialize app
+  init();
