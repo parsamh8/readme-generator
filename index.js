@@ -50,7 +50,7 @@ const generateReadme = (response) => {
   function init() {
     inquirer.prompt(questions).then((response) => {
       const readmePageContent = generateReadme(response);
-      writeToFile('./Generated/README-generated.md', readmePageContent);
+      writeToFile('README-generated.md', readmePageContent);
     });
   }
   

@@ -21,7 +21,7 @@ The README Generator is a command-line application that dynamically creates a pr
 To install and run this application, follow these steps:
  - git clone https://github.com/parsamh8/readme-generator
  - navigate to the project directory "cd readme-generator
- - install the required dependencies: "npm install"
+ - install the required dependencies "npm install"
 
 
  ## Usage
@@ -34,7 +34,7 @@ To install and run this application, follow these steps:
  - License selection (Apache, Boost, MIT, None)
  - Test instructions
 
- Once the input is provided, a README-Generator.md file will be created in the separate project directory called "Generated".
+ Once the input is provided, a README-Generator.md file will be created in the project directory.
 
 
 ## License
